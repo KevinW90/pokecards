@@ -24,26 +24,37 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  background: #555;
 }
 
 form {
   width: 100%;
-  padding: 20px;
+  // padding: 20px;
 
   display: flex;
   justify-content: space-between;
   background: green;
 
+  
+
   [type=text] {
-    flex: 2;
+    max-width: 75%;
+    padding: 10px;
+    // flex: 2;
+    font-size: 2rem;
+  }
+
+  [type=submit] {
+    min-width: 25%;
+    border: none;
   }
 }
 
 .pkmn-card {
   position: relative;
-  width: 300px;
-  height: auto;
-
+  width: 80%;
+  height: 500px;
   display: inline-block;
 
   background: white;
@@ -58,20 +69,54 @@ form {
 
 .pkmn-card_img {
   position: relative;
-  height: 250px;
+  height: 45%;
 
   margin-bottom: 35px;
 
-  background: linear-gradient(to bottom, rgba(140,122,122,1) 0%, rgba(175,135,124,1) 65%, rgba(175,135,124,1) 100%) fixed;
+  background: linear-gradient(to top right, rgba(255,0,0,1) 0%, rgba(155,0,0,1) 65%, rgba(55,0,0,1) 100%) fixed;
 
   border-radius: 20px 20px 0 0;
 }
 
 .pkmn-card_img-pkmn {
   img {
-    width: 400px;
+    width: 130%;
     position: absolute;
     top: -100px;
-    left: -50px;
+    left: -10%;
+  }
+}
+
+.pkmn-number {
+  font-size: 1.3rem;
+}
+
+.pkmn-name {
+  font-size: 3rem;
+  text-transform: capitalize;
+}
+
+.stats {
+  width: 100%;
+  display: grid;
+  grid-template: 1fr / repeat(3, 1fr);
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+  background: red;
+  border-radius: 0 0 20px 20px;
+  color: #eee;
+  font-weight: bold;
+
+  & div span {
+    display: block;
+  }
+
+  & div span:first-child {
+    font-size: 1rem;
+  }
+
+  .n {
+    font-size: 2rem;
   }
 }

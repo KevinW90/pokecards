@@ -36,11 +36,11 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background: #555;
 }
 
 form {
   width: 100%;
-  padding: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -51,15 +51,20 @@ form {
 }
 
 form [type=text] {
-  -webkit-box-flex: 2;
-      -ms-flex: 2;
-          flex: 2;
+  max-width: 75%;
+  padding: 10px;
+  font-size: 2rem;
+}
+
+form [type=submit] {
+  min-width: 25%;
+  border: none;
 }
 
 .pkmn-card {
   position: relative;
-  width: 300px;
-  height: auto;
+  width: 80%;
+  height: 500px;
   display: inline-block;
   background: white;
   text-align: center;
@@ -69,17 +74,54 @@ form [type=text] {
 
 .pkmn-card_img {
   position: relative;
-  height: 250px;
+  height: 45%;
   margin-bottom: 35px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#8c7a7a), color-stop(65%, #af877c), to(#af877c)) fixed;
-  background: linear-gradient(to bottom, #8c7a7a 0%, #af877c 65%, #af877c 100%) fixed;
+  background: -webkit-gradient(linear, left bottom, right top, from(red), color-stop(65%, #9b0000), to(#370000)) fixed;
+  background: linear-gradient(to top right, red 0%, #9b0000 65%, #370000 100%) fixed;
   border-radius: 20px 20px 0 0;
 }
 
 .pkmn-card_img-pkmn img {
-  width: 400px;
+  width: 130%;
   position: absolute;
   top: -100px;
-  left: -50px;
+  left: -10%;
+}
+
+.pkmn-number {
+  font-size: 1.3rem;
+}
+
+.pkmn-name {
+  font-size: 3rem;
+  text-transform: capitalize;
+}
+
+.stats {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr;
+  -ms-grid-columns: (1fr)[3];
+      grid-template: 1fr/repeat(3, 1fr);
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+  background: red;
+  border-radius: 0 0 20px 20px;
+  color: #eee;
+  font-weight: bold;
+}
+
+.stats div span {
+  display: block;
+}
+
+.stats div span:first-child {
+  font-size: 1rem;
+}
+
+.stats .n {
+  font-size: 2rem;
 }
 /*# sourceMappingURL=index.css.map */

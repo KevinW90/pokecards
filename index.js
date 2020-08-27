@@ -33,16 +33,32 @@ const PKMN = '/pokemon/';
 //function to display pokemon data
 displayPKMN = (pkmn) => {
   const {id, name, stats, types, sprites, ...rest} = pkmn;
+  const atk = stats[1].base_stat;
+  const def = stats[2].base_stat;
+  const spd = stats[5].base_stat;
+
   $('main').html(`
     <div class="pkmn-card">
-        <div class="pkmn-card_img pkmn-card_img-pkmn">
-          <img src="${sprites.front_default}"/>
-        </div>
+      <div class="pkmn-card_img pkmn-card_img-pkmn">
+        <img src="${sprites.front_default}"/>
+      </div>
       
+      <div class="pkmn-number">
+        # ${id}
+      </div>
+
       <div class="pkmn-name">
         ${name}
       </div>
+
+      <div class="stats">
+        <div class="atk"><span>ATK</span> <span class="n">${atk}</span></div>
+        <div class="def"><span>DEF</span> <span class="n">${def}</span></div>
+        <div class="spd"><span>SPD</span> <span class="n">${spd}</span></div>
+      </div>
     </div>`)
+
+    console.log(stats)
 }
 
 //function to fetch pokemon data
