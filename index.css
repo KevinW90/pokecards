@@ -1,0 +1,85 @@
+:root {
+  font-size: 14px;
+}
+
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+form {
+  width: 100%;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: green;
+}
+
+form [type=text] {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+
+.pkmn-card {
+  position: relative;
+  width: 300px;
+  height: auto;
+  display: inline-block;
+  background: white;
+  text-align: center;
+  margin: auto;
+  border-radius: 20px;
+}
+
+.pkmn-card_img {
+  position: relative;
+  height: 250px;
+  margin-bottom: 35px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#8c7a7a), color-stop(65%, #af877c), to(#af877c)) fixed;
+  background: linear-gradient(to bottom, #8c7a7a 0%, #af877c 65%, #af877c 100%) fixed;
+  border-radius: 20px 20px 0 0;
+}
+
+.pkmn-card_img-pkmn img {
+  width: 400px;
+  position: absolute;
+  top: -100px;
+  left: -50px;
+}
+/*# sourceMappingURL=index.css.map */

@@ -32,14 +32,24 @@ const PKMN = '/pokemon/';
 
 //function to display pokemon data
 displayPKMN = (pkmn) => {
-  $('main').html(pkmn.name);
+  const {id, name, stats, types, sprites, ...rest} = pkmn;
+  $('main').html(`
+    <div class="pkmn-card">
+        <div class="pkmn-card_img pkmn-card_img-pkmn">
+          <img src="${sprites.front_default}"/>
+        </div>
+      
+      <div class="pkmn-name">
+        ${name}
+      </div>
+    </div>`)
 }
 
 //function to fetch pokemon data
 fetchPKMN = (pkmn) => {
   fetch(`${ROOT_URL}${PKMN}${pkmn}`)
   .then(res => res.json())
-  .then(resJson => {console.log(resJson); displayPKMN(resJson)})
+  .then(resJson => displayPKMN(resJson))
 }
 
 $(() => {
@@ -49,4 +59,8 @@ $(() => {
     //fetch the pokemon data
     fetchPKMN(userData);    
   })
+
+  //auto fetch
+  $('[name=data]').val(6);
+  $('form').submit();
 })

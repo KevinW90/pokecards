@@ -1,0 +1,77 @@
+:root {
+  font-size: 14px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  width: 100%;
+  padding: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  background: green;
+
+  [type=text] {
+    flex: 2;
+  }
+}
+
+.pkmn-card {
+  position: relative;
+  width: 300px;
+  height: auto;
+
+  display: inline-block;
+
+  background: white;
+
+  text-align: center;
+
+  margin: auto;
+
+  // border: 2px solid black;
+  border-radius: 20px;
+}
+
+.pkmn-card_img {
+  position: relative;
+  height: 250px;
+
+  margin-bottom: 35px;
+
+  background: linear-gradient(to bottom, rgba(140,122,122,1) 0%, rgba(175,135,124,1) 65%, rgba(175,135,124,1) 100%) fixed;
+
+  border-radius: 20px 20px 0 0;
+}
+
+.pkmn-card_img-pkmn {
+  img {
+    width: 400px;
+    position: absolute;
+    top: -100px;
+    left: -50px;
+  }
+}
